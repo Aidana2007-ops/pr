@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логистическая компания</title>
+    <link rel="stylesheet" href="D:\praktice\styles1.css">
+</head>
+<body>
+    <header>
+        <script>
+         let scrollStep = 200; 
+           function scrollUp() 
+            {
+               window.scrollBy({
+               top: -scrollStep,  
+               behavior: 'smooth' 
+               });
+             }
+        document.querySelectorAll('nav ul li a').forEach(function(link) 
+        {
+          link.addEventListener('click', function(event) 
+             {
+          event.preventDefault(); 
+                 const targetSection = document.querySelector(link.getAttribute('href'));        
+                 targetSection.scrollIntoView({ behavior: 'smooth' });
+             });
+        });
+        function submitForm() {
+            const name = document.getElementById('nameInput').value.trim();
+            const phone = document.getElementById('phoneInput').value.trim();
+            const popup = document.getElementById('popup');
+            const popupIcon = document.getElementById('popupIcon');
+
+            if (name && phone) {
+                popup.classList.add('show');
+                popup.classList.remove('error');
+                popupIcon.textContent = '✓';
+                
+                document.getElementById('nameInput').value = '';
+                document.getElementById('phoneInput').value = '';
+            } else {
+                popup.classList.add('show', 'error');
+                popupIcon.textContent = '✕';
+            }
+            setTimeout(() => {
+                popup.classList.remove('show', 'error');
+            }, 1000);
+            }
+            </script>
+
+            <div class="contact2">
+            <img src="D:/praktice/twitter 2(1).png" alt="Contact Icon" class="contact2-img">
+            Zhayik & K
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#logistics">Логистика</a></li>
+                <li><a href="#delivery-setup">Настройка поставок</a></li>
+                <li><a href="#brokerage-services">Брокерские услуги</a></li>
+                <li><a href="#storage-services">Услуги хранения</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="contact">
+            <img src="D:/praktice/telephone.png" alt="Contact Icon" class="contact-img">
+            +7 (777) 777-77-77
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Эффективная логистика</h1>
+            <h2 class="hero-subtitle">от поставки до хранения</h2>
+            <p class="hero-description">Организуем поставки, таможенное оформление и хранение без лишних затрат и задержек.</p>
+            <br>
+            <a href="#" class="btn">Заказать расчет</a>
+        </div>
+        <div class="ellipse" ><img src="D:/praktice/whatsapp.png" class="imggg "></div>
+        <div class="ellipse1" ><img src="D:/praktice/telephone.png" class="imggg1 "></div>
+    </section>
+   
+    <section class="services1" id="logistics">
+        <div class="service">
+            <img src="D:\praktice\logis.jpeg" alt="Логистика" class="service-img">
+            <div class="service-text">
+                <br><br>
+                <h3 class="service-title">Логистика</h3>
+                <br><br>
+                <p class="service-description">
+                    Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения Вашего сайта. 
+                    Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения сайта. 
+                    <br><br>Вам будет необходимо предоставить исходные данные, по которым наши копирайтеры составят правильный текст, 
+                    который будет содержать в себе информацию. Это текст о компании. Он необходим для дальнейшего продвижения 
+                    Вашего сайта. Вам будет необходимо предоставить исходные данные, по которым наши копирайтеры составят текст,  
+                    который будет содержать в себе информацию.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services2" id="delivery-setup">
+        <div class="service2">
+            <div class="service-text2">
+                <h3 class="service-title2">Настройка поставок</h3>
+                 <div class="vector2"></div>
+                <br>
+                <p class="service-description2">
+                    Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения Вашего сайта. 
+                    Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения сайта. 
+                    <br><br>  Вам будет необходимо предоставить исходные данные, по которым наши копирайтеры составят правильный текст, 
+                    который будет содержать в себе информацию. Это текст о компании. Он необходим для дальнейшего продвижения 
+                    Вашего сайта. Вам будет необходимо предоставить исходные данные, по которым наши копирайтеры составят текст, 
+                    который будет содержать в себе информацию.
+                </p>
+            </div>
+            <img src="D:\praktice\nostr.jpeg" alt="Настройка" class="service-img2">
+        </div>
+    </section>
+    
+    <section class="hero10">
+        <div class="hero-content10">
+            <h1 class="hero-title10">У вас остались вопросы?</h1>
+            <br><p class="hero-description10">Гарантируем доставку грузов в срок</p>
+            <div class="form-container1">
+                <input type="text" id="nameInput" placeholder="Имя" class="input-field1">
+                <input type="tel" id="phoneInput" placeholder="Телефон" class="input-field1" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                <button class="btn " onclick="submitForm()">ОТПРАВИТЬ</button>
+                <div id="popup" class="popup">
+                <div class="popup-content" id="popupIcon"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services3" id="storage-services">
+        <div class="service3">
+            <div class="service-text3">
+                <h3 class="service-title3">Услуги хранения</h3>
+                <p class="service-description3">
+                    Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения Вашего сайта.
+                    Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения сайта.
+                </p>
+            </div>
+            
+            <div class="service-images">
+                <div class="left-image">
+                    <img src="D:\praktice\usli1.jpeg" alt="Настройка" class="service-img2">
+                </div>
+                <div class="right-images">
+                    <img src="D:\praktice\usli2.jpeg" alt="Настройка" class="service-img2">
+                    <img src="D:\praktice\usli3.jpeg" alt="Настройка" class="service-img2">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="hero3" id="brokerage-services">
+        <div class="hero-content3">
+            <h1 class="hero-title3">Брокерские услуги</h1>
+            <p class="hero-description3">Здесь будет мини-описание. Это текст о компании. 
+                Он необходим для дальнейшего продвижения Вашего сайта. Здесь будет мини-описание. Это текст о компании.
+                Он необходим для дальнейшего продвижения сайта.<br><br> Вам будет необходимо предоставить исходные данные, по 
+                которым наши копирайтеры составят правильный текст, который будет содержать в себе информацию. Это текст
+                о компании. Он необходим для дальнейшего продвижения Вашего сайта. Вам будет необходимо
+            </p>
+        </div>
+    </section>
+    
+    <section class="services4">
+        <h3 class="hero-title4">Почему мы?</h3>
+             <br><br>
+        <div class="grid-container">
+            <div class="groups-container">
+                <div class="group">
+                    <img src="D:/praktice/contract.png" alt="Group 9706" />
+                </div>
+            </div>
+            <div class="groups-container">
+                <div class="group2">
+                    <img src="D:/praktice/customer-service (1).png" alt="Group 9707" />
+                </div>
+            </div>
+            <div class="groups-container">
+                <div class="group3">
+                    <img src="D:/praktice/dashboard (2).png" alt="Group 9708" />
+                </div>
+            </div>
+            <div class="advantage">Преимущество</div>
+            <div class="advantage2">Преимущество</div>      
+            <div class="advantage3">Преимущество</div>
+            <div class="mini-description">Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения Вашего сайта. Здесь будет мини.</div>
+            <div class="mini-description2">Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения Вашего сайта. Здесь будет мини.</div>
+            <div class="mini-description3">Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения Вашего сайта. Здесь будет мини.</div>
+            
+            <div class="groups-container">
+                <div class="group4">
+                    <img src="D:/praktice/group-chat.png" alt="Group 9709" />
+                </div>
+            </div>
+            <div class="groups-container">
+                <div class="group5">
+                    <img src="D:/praktice/social-media.png" alt="Group 9710" />
+                </div>
+            </div>
+            <div class="groups-container">
+                <div class="group6">
+                    <img src="D:/praktice/speech-bubble.png" alt="Group 9711" />
+                </div>
+            </div>
+            <div class="advantage4">Преимущество</div>
+            <div class="advantage5">Преимущество</div>
+            <div class="advantage6">Преимущество</div>
+            <div class="mini-description4">Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения Вашего сайта. Здесь будет мини.</div>
+            <div class="mini-description5">Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения Вашего сайта. Здесь будет мини.</div>
+            <div class="mini-description6">Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения Вашего сайта. Здесь будет мини.</div>
+        </div>
+    </section>
+    
+    <section class="services1">
+        <div class="service">
+            <img src="D:\praktice\komp.jpeg" alt="О компании" class="service-img">
+            <div class="service-text">
+                <br><br>
+                <h3 class="service-title">О компании</h3>
+                <br><br>
+                <p class="service-description">
+                    Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения Вашего сайта. 
+                    Здесь будет мини-описание. Это текст о компании. Он необходим для дальнейшего продвижения сайта. 
+                    <br><br>Вам будет необходимо предоставить исходные данные, по которым наши копирайтеры составят правильный текст, 
+                    который будет содержать в себе информацию. Это текст о компании. Он необходим для дальнейшего продвижения 
+                    Вашего сайта. Вам будет необходимо предоставить исходные данные, по которым наши копирайтеры составят текст, 
+                    который будет содержать в себе информацию.
+                </p>
+            </div>
+        </div>
+    </section>
+
+   <section class="services1" id="contacts">
+        <div class="rectangle-9">
+           <div class="group-632676">
+         <div class="group-633576">
+            <div class="content">       
+                <div class="pair">
+                    <div class="image-container image-1"></div>
+                    <div class="address">
+                        Г. Астана, район название улица 145, офис 4
+                    </div>
+                </div>
+                <div class="pair">
+                    <div class="image-container image-2"></div>
+                    <div class="google-maps-link">
+                        Перейти на Google Maps
+                    </div>
+                </div>
+                
+                <div class="pair">
+                    <div class="image-container image-3"></div>
+                    <div class="twogis-link">
+                        Перейти в 2GIS/2ГИС
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+<br>
+
+       <section class="services1">
+            <div class="rectangle-8">
+            <div class="group-633576">
+            <div class="content">
+                <div class="pair">
+                    <div class="image-container image-4"></div>
+                    <div class="address2">
+                        <div class="address-title">
+                            юридический адрес:
+                        </div>
+                        <div class="google-maps-link2">
+                            г. Астана, район название улица 145, офис 4
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+
+<section class="services1">
+    <div class="rectangle-7">
+        <div class="group-632676">
+            <div class="group-633576">
+                <div class="content">
+                    <div class="pair">
+                        <div class="image-container image-5"></div>
+                        <div class="address2">
+                            <div class="address-title">
+                                Телефон: 
+                            </div>
+                            <div class="google-maps-link2">
+                                8 (700) 000–00–00 <br> 8 (700) 000–00–00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+          <div class="image-container1">
+              <a href="https://2gis.kz/astana/geo/9570784863324685/71.434353,51.163152" target="_blank">
+                  <img src="D:\praktice\karta.jpeg" alt="Image" class="image">
+                </a>
+           </div>
+
+         <section class="services1">
+         <div class="rectangle1">
+            <div class="partner-text1">партнер</div>
+        </div>
+        </section>
+        <section class="services1">
+            <div class="rectangle2">
+               <div class="partner-text2">клиент</div>
+           </div>
+        </section>
+           <section class="services1">
+            <div class="rectangle3">
+               <div class="partner-text3">партнер</div>
+           </div>
+           </section>
+           <section class="services1">
+               <div class="rectangle4">
+                  <div class="partner-text4">клиент</div>
+              </div>
+              </section>
+
+              <section class="services1">
+                <div class="rectangle5">
+                   <div class="partner-text5">партнер</div>
+               </div>
+               </section>
+               <section class="services1">
+                   <div class="rectangle6">
+                      <div class="partner-text6">клиент</div>
+                  </div>
+                  </section>
+
+                  <div class="container">
+                    <div class="service-text4">
+                        <h1 class="service-title4">Расчет перевозки</h1>
+                        <p class="service-description4">
+                            Чтобы получить расчет перевозки, пожалуйста заполните информацию о вашей перевозке, и мы свяжемся с вами.
+                        </p>
+                    </div>
+                
+                    <div class="form-container">
+                        <form action="#" method="post">
+                            <label for="name">Имя</label>
+                            <br> <input type="text" id="name" name="name" placeholder="Контактное лицо имя, компания" required>
+                    
+                         <br>   <label for="phone">Телефон</label>
+                         <br>  <input type="tel" id="phone" name="phone" placeholder="Укажите номер телефона, ватсап" required>
+                    
+                            <br> <label for="from">Откуда</label>
+                            <br> <input type="text" id="from" name="from" placeholder="Укажите страну отправления, город" required>
+                    
+                            <br>  <label for="to">Куда</label>
+                            <br>  <input type="text" id="to" name="to" placeholder="Укажите страну назначения, город" required>
+                    
+                            <br> <label for="cargo">Груз</label>
+                            <br>  <textarea id="cargo" name="cargo" placeholder="Опишите ваш груз" required></textarea>
+                    
+                            <div class="additional">
+                                <input type="number" name="places" placeholder="Кол-во мест">
+                                <input type="number" name="weight" placeholder="Вес (кг)">
+                                <input type="number" name="volume" placeholder="Объем (м³)">
+                            </div>
+                            <div class="submit-container">
+                            <button class="button ">Рассчитать</button>
+                            <p class="consent">Даю согласие на обработку<br> моих персональных данных</p>                     
+                         </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="group632532">
+                    <div class="ellipse14" onclick="scrollUp()"></div>
+                    <div class="text-container">
+                        <span class="text">наверх</span>
+                    </div>
+                    <div class="vector12"></div>
+                    <span class="ellipse-text">ABC ALMATY</span>
+                </div>     
+</body>
+</html> 
